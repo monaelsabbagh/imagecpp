@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: depcpp
+
+spec:
+  selector:
+    matchLabels:
+       label_name: pc
+  replicas: 2
+  template: 
+    metadata:
+      name: podcpp
+      labels:
+        label_name: pc
+
+    spec: 
+      containers: 
+        - image: mona774/imgcpp
+          name: c2
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "1"

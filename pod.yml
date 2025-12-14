@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: podcpp
+  labels:
+    label_name: pc
+
+spec: 
+  containers: 
+    - image: mona774/imgcpp
+      name: c1
+      resources:
+        limits:
+          memory: "512Mi"
+          cpu: "1"

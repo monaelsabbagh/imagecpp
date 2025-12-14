@@ -1,5 +1,12 @@
-FROM gcc:13
+FROM ubuntu:22.04
+
+RUN apt-get update && apt-get install -y g++ build-essential bash
+
 WORKDIR /app
+
 COPY File.cpp .
+
 RUN g++ File.cpp -o app
-CMD ["./app"]
+
+CMD ["/bin/bash"]
+
